@@ -26,15 +26,26 @@ header {
     }
 
     nav {
-        display: flex;
-        gap: 1.5em;
-        color: $white;
-        font-family: "Alata", sans-serif;
-        cursor: pointer;
+        ul {
+            display: flex;
+            gap: 1.5em;
+            list-style: none;
+            color: $white;
+            font-family: "Alata", sans-serif;
+            cursor: pointer;
+        }
+        li {
+            a {
+                text-decoration: none;
+                color: $white;
+
+                &:hover {
+                    color: $black;
+                }
+            }
+        }
     }
-    a:hover {
-        color: $black;
-    }
+    
 
     .header-text {
         padding: 4rem 11rem;

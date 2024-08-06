@@ -2,17 +2,18 @@ import Links from './Links'
 import logo from '../assets/images/logo.svg';
 import '../sass/header.scss';
 
-const Header = ({links, text}) => {
+const Header = () => {
+    const links = ["About", "Careers", "Events", "Products", "Support"];
     return (
         <header>
             <section className="header-section" >
                 <img alt="Logo" src={logo}></img>
                 <nav>
-                    <Links links={links} text="About"/> 
-                    <Links links={links} text="Careers"/>
-                    <Links links={links} text="Events"/>
-                    <Links links={links} text="Products"/>
-                    <Links links={links} text="Support"/>
+                    <ul>
+                        {links.map((link, index) => (
+                            <Links key={index} text={link} />
+                        ))}
+                    </ul>
                 </nav>
             </section>
             <section className="header-text" >

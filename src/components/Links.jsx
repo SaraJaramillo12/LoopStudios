@@ -1,7 +1,12 @@
 import PropTypes from "prop-types";
 
 const Links = ({ text}) => {
-    return <a >{text}</a>
+    return (
+    
+        <li>
+            <a href="#" >{text}</a>
+        </li>
+    );
 }
 
 Links.propTypes = {
