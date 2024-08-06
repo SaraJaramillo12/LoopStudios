@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import Header from './components/Header'
 import Section from './components/Section'
 import Footer from './components/Footer'
+import Gallery from './components/Gallery'
 
 import './App.css'
 
@@ -15,6 +16,7 @@ function App() {
       
      <Header />
      <Section />
+     <Gallery />
      <Footer />
     </>
   )
