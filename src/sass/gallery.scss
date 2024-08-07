@@ -3,12 +3,60 @@
 
 $white: hsl(0, 0%, 100%);
 $black: hsl(0, 0%, 0%);
-$dark-gray:  hsl(0, 0%, 55%);
+$dark-gray: hsl(0, 0%, 55%);
 $very-dark-gray: hsl(0, 0%, 41%);
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+.gallery {
+    padding: 5% 12%;
+
+    .gallery__intro {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        h2 {
+            font-family: "Josefin Sans", sans-serif;
+            font-size: 2em;
+        }
+
+        button {
+            border: solid 1px $black;
+            background-color: $white;
+            font-family: "Alata", sans-serif;
+            font-size: 1em;
+            padding: 10px 30px;
+        }
+    }
+
+    .gallery__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(17.4rem, 1fr));
+        gap: 1rem;
+
+        .gallery__item {
+            position: relative;
+
+            h3 {
+                position: absolute;
+                top: 90%;
+                left: 10%;
+                font-family: "Josefin Sans", sans-serif;
+                color: $white;
+                font-size: 2em;
+            }
+        }
+    }
+}
+
+
+@media (min-width: 1025px) {
+    .gallery__grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }

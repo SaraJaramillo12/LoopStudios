@@ -1,4 +1,4 @@
-import '../sass/section.scss';
+import '../sass/gallery.scss';
 import deepearth from '../assets/images/desktop/image-deep-earth.jpg';
 import nightarcade from '../assets/images/desktop/image-night-arcade.jpg';
 import soccerteam from '../assets/images/desktop/image-soccer-team.jpg';
@@ -7,11 +7,6 @@ import fromUp from '../assets/images/desktop/image-from-above.jpg';
 import pocketborealis from '../assets/images/desktop/image-pocket-borealis.jpg';
 import curiosity from '../assets/images/desktop/image-curiosity.jpg';
 import fisheye from '../assets/images/desktop/image-fisheye.jpg';
-
-
-
-
-
 
 const imagenes = [
     { title: "DEEP EARTH", image: deepearth },
@@ -28,15 +23,17 @@ const Gallery = () => {
     return (
         <section className="gallery">
             <div className="gallery__intro">
-                <h1 className="gallery__title">OUR CREATIONS</h1>
+                <h2 className="gallery__title">OUR CREATIONS</h2>
                 <button>SEE ALL</button>
             </div>
+            <section className='gallery__grid'>
             {imagenes.map((imagenes, index) => (
                 <div key={index} className="gallery__item">
                     <img src={imagenes.image} alt={imagenes.title} />
-                    <div className="gallery__item-title">{imagenes.title}</div>
+                    <h3 className="gallery__item-title">{imagenes.title}</h3>
                 </div>
             ))}
+            </section>
         </section>
     )
 }
