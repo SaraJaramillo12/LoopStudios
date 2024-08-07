@@ -13,12 +13,14 @@ $very-dark-gray: hsl(0, 0%, 41%);
 }
 
 .gallery {
-    padding: 5% 12%;
+    padding: 4% 10%;
+    width: 100%;
 
     .gallery__intro {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        padding-bottom: 4%;
 
         h2 {
             font-family: "Josefin Sans", sans-serif;
@@ -30,21 +32,39 @@ $very-dark-gray: hsl(0, 0%, 41%);
             background-color: $white;
             font-family: "Alata", sans-serif;
             font-size: 1em;
-            padding: 10px 30px;
+            padding: 10px 50px;
+
+            &:hover {
+                background-color: $black;
+                color: $white;
+            }
         }
+
+
     }
 
     .gallery__grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(17.4rem, 1fr));
+        grid-template-columns: repeat(4, 1fr);
         gap: 1rem;
+
 
         .gallery__item {
             position: relative;
+            aspect-ratio: 256/450;
+
+            img {
+                width: 100%;
+                object-fit: cover;
+
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
 
             h3 {
                 position: absolute;
-                top: 90%;
+                top: 80%;
                 left: 10%;
                 font-family: "Josefin Sans", sans-serif;
                 color: $white;
@@ -53,10 +73,3 @@ $very-dark-gray: hsl(0, 0%, 41%);
         }
     }
 }
-
-
-@media (min-width: 1025px) {
-    .gallery__grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
