@@ -15,6 +15,7 @@ $very-dark-gray: hsl(0, 0%, 41%);
 .gallery {
     padding: 4% 10%;
     width: 100%;
+    position: relative; /* Necesario para que el botón se posicione dentro del contenedor */
 
     .gallery__intro {
         display: flex;
@@ -39,15 +40,14 @@ $very-dark-gray: hsl(0, 0%, 41%);
                 color: $white;
             }
         }
-
-
     }
 
     .gallery__grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
         gap: 1rem;
-
+        margin-bottom: 60px; /* Espacio para que el botón no quede encima de las imágenes */
 
         .gallery__item {
             position: relative;
@@ -58,20 +58,54 @@ $very-dark-gray: hsl(0, 0%, 41%);
                 color: $black;
             }
 
+            @media (max-width: 450px) {
+                aspect-ratio: 654/240;
+            }
+
             img {
                 width: 100%;
                 object-fit: cover;
-
             }
 
             h3 {
                 position: absolute;
-                top: 80%;
+                top: 75%;
                 left: 10%;
                 font-family: "Josefin Sans", sans-serif;
                 color: $white;
-                font-size: 2em;
+                font-size: 2.5em;
+
+                @media (max-width: 400px) {
+                    font-size: 1.5em;
+                    top: 60%;
+                }
             }
+        }
+    }
+
+    @media (max-width: 450px) {
+        .gallery__intro {
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 0;
+            margin-bottom: 20px; /* Ajusta el espacio debajo del título */
+
+            h2 {
+                margin-bottom: 20px;
+            }
+
+            button {
+                position: absolute;
+                bottom: 90px; /* Ajusta este valor para mover el botón hacia abajo */
+                left: 50%;
+                transform: translateX(-50%);
+                
+            }
+        }
+
+        .gallery__grid {
+            margin-top: 20px;
+            margin-bottom: 150px; /* Asegura que haya suficiente espacio debajo de las imágenes */
         }
     }
 }

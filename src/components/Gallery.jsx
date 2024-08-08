@@ -24,7 +24,7 @@ const imagenes = [
     { title: "DEEP EARTH", image: deepearth, img: deepEarth },
     { title: 'NIGH ARCADE', image: nightarcade, img: nightArcade},
     { title: "SOCCER TEAM", image: soccerteam, img: soccerTeamg },
-    { title: "GRID", image: grid, img: Grid },
+    { title: "THE GRID", image: grid, img: Grid },
     { title: "FROM UP ABOVE VR", image: fromUp, img: FromUp },
     { title: "POCKET BOREALIS", image: pocketborealis, img: pocketBorealis },
     { title: "THE CURIOSITY", image: curiosity, img: Curiosity },
