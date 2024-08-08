@@ -53,13 +53,15 @@ $very-dark-gray: hsl(0, 0%, 41%);
             position: relative;
             aspect-ratio: 256/450;
 
+            &:hover {
+                opacity: 0.5;
+                color: $black;
+            }
+
             img {
                 width: 100%;
                 object-fit: cover;
 
-                &:hover {
-                    opacity: 0.5;
-                }
             }
 
             h3 {
