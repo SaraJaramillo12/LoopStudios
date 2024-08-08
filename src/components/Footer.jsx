@@ -1,25 +1,44 @@
-import Links from './Links'
 import logo from '../assets/images/logo.svg';
 import facebook from '../assets/images/icon-facebook.svg';
 import twitter from '../assets/images/icon-twitter.svg';
 import pinterest from '../assets/images/icon-pinterest.svg';
 import instagram from '../assets/images/icon-instagram.svg';
+import '../sass/footer.scss';
 
-const Footer = ({links, text}) => {
+const Footer = () => {
+    const links = ["About", "Careers", "Events", "Products", "Support"];
     return (
-        <footer>
-             <img alt="Logo" src={logo}></img>
-            <nav>
-             <Links links={links} text="About"/> {/* pass the links array as a prop to Links component */}
-             <Links links={links} text="Careers"/>
-             <Links links={links} text="Events"/>
-             <Links links={links} text="Products"/>
-             <Links links={links} text="Support"/>
-             <img alt="Logo" src={facebook}></img>
-             <img alt="Logo" src={twitter}></img>
-             <img alt="Logo" src={pinterest}></img>
-             <img alt="Logo" src={instagram}></img>
-            </nav>
+        <footer className="footer">
+            <div className="footer-top">
+                <div className="footer-left">
+                    <img alt="Logo" src={logo} className="footer-logo"/>
+                    <ul className="footer-links">
+                        {links.map((link, index) => (
+                            <li key={index} className="footer-link">{link}</li>
+                        ))}
+                    </ul>
+                </div>
+                <div className="footer-right">
+                    <div className="social-icons">
+                        <div className="social-icon-wrapper">
+                            <img alt="Facebook" src={facebook} className="social-icon" />
+                        </div>
+                        <div className="social-icon-wrapper">
+                            <img alt="Twitter" src={twitter} className="social-icon" />
+                        </div>
+                        <div className="social-icon-wrapper">
+                            <img alt="Pinterest" src={pinterest} className="social-icon" />
+                        </div>
+                        <div className="social-icon-wrapper">
+                            <img alt="Instagram" src={instagram} className="social-icon" />
+                        </div>
+                    </div>
+                    <div className="footer-bottom">
+                        <p>© 2021 Loopstudios. All rights reserved.</p>
+                    </div>
+                </div>
+
+            </div>
         </footer>
     );
 }

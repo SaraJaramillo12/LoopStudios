@@ -26,27 +26,55 @@ header {
     }
 
     nav {
-        display: flex;
-        gap: 1.5em;
-        color: $white;
-        font-family: "Alata", sans-serif;
-        cursor: pointer;
+        ul {
+            display: flex;
+            gap: 1.5em;
+            list-style: none;
+            color: $white;
+            font-family: "Alata", sans-serif;
+            cursor: pointer;
+        }
+    
+        li {
+            a {
+                position: relative; // Asegúrate de que el contenedor tenga position: relative
+                text-decoration: none;
+                color: $white;
+    
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 50%; // Ajusta la longitud del subrayado
+                    height: 2px; // Ajusta el grosor del subrayado
+                    background-color: currentColor; // Utiliza el color actual del texto
+                    bottom: -4px; // Ajusta esta propiedad para mover la línea más abajo
+                    left: 50%;
+                    transform: translateX(-50%);
+                    border-radius: 2px; // Ajusta el borde redondeado
+                    opacity: 0;
+                    transition: opacity 0.3s;
+                }
+    
+                &:hover::after {
+                    opacity: 1;
+                }
+            }
+        }
     }
-    a:hover {
-        color: $black;
-    }
+    
+    
 
     .header-text {
         padding: 4rem 11rem;
         font-family: "Josefin Sans", sans-serif;
         color: $white;
-        
-    }
-    .header-text h2 {
-        border: solid 2px $white;
-        padding: 25px;
-        width: 45%;
-        font-size: 3rem;
-    }
+      
+        h2 {
+            border: solid 2px $white;
+            padding: 25px;
+            width: 45%;
+            font-size: 3rem;
+    }; 
 }
 
+}

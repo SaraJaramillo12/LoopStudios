@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Play:wght@400;700&family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&family=Josefin+Sans:ital,wght@0,100;1,100&family=Play:wght@400;700&display=swap');
+
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+$dark-gray: hsl(0, 0%, 55%);
+$very-dark-gray: hsl(0, 0%, 41%);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Alata', sans-serif;
+}
+
+.footer {
+    background-color: $black;
+    color: $white;
+    text-align: center;
+    padding: 40px 0;
+
+    .footer-top {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10rem;
+        margin-bottom: 20px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+            padding: 0 2rem;
+        }
+    }
+
+    .footer-left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        @media (max-width: 768px) {
+            align-items: center;
+            margin-bottom: 20px;
+        }
+    
+        .footer-logo {
+            width: 110px;
+            margin-bottom: 20px;
+        }
+    
+        .footer-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+
+            @media (max-width: 768px) {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+    
+            .footer-link {
+                position: relative; // Asegurarse de que el contenedor tenga position: relative
+                cursor: pointer;
+                font-family: 'Alata', sans-serif;
+                font-size: 14px;
+                text-decoration: none; // Eliminar el subrayado por defecto
+    
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 50%; // Ajusta la longitud del subrayado
+                    height: 2px; // Ajusta el grosor del subrayado
+                    background-color: $white; // Utiliza el color actual del texto
+                    bottom: -4px; // Ajusta esta propiedad para mover la línea más abajo
+                    left: 50%;
+                    transform: translateX(-50%);
+                    border-radius: 2px; // Ajusta el borde redondeado
+                    opacity: 0;
+                    transition: opacity 0.3s;
+                }
+    
+                &:hover::after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    
+
+    .footer-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        @media (max-width: 768px) {
+            align-items: center;
+        }
+    
+        .social-icons {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 20px;
+    
+            .social-icon-wrapper {
+                position: relative; // Necesario para posicionar la línea de subrayado
+    
+                &:hover::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: -1mm; // Coloca la línea 3mm debajo del icono
+                    height: 2px; // Altura de la línea
+                    background-color: $white; // Color de la línea
+                }
+    
+                .social-icon {
+                    width: 20px;
+                    height: 20px;
+                    cursor: pointer;
+                }
+            }
+        }
+    
+        .footer-bottom {
+            font-size: 14px;
+            font-family: 'Alata', sans-serif;
+            text-align: center; 
+            color: $dark-gray;
+            
+            p {
+                margin: 0;
+            }
+        }
+    }
+    
+}

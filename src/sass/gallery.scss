@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Play:wght@400;700&family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&family=Josefin+Sans:ital,wght@0,100;1,100&family=Play:wght@400;700&display=swap');
+
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+$dark-gray: hsl(0, 0%, 55%);
+$very-dark-gray: hsl(0, 0%, 41%);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.gallery {
+    padding: 4% 10%;
+    width: 100%;
+
+    .gallery__intro {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 4%;
+
+        h2 {
+            font-family: "Josefin Sans", sans-serif;
+            font-size: 2em;
+        }
+
+        button {
+            border: solid 1px $black;
+            background-color: $white;
+            font-family: "Alata", sans-serif;
+            font-size: 1em;
+            padding: 10px 50px;
+
+            &:hover {
+                background-color: $black;
+                color: $white;
+            }
+        }
+
+
+    }
+
+    .gallery__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+
+
+        .gallery__item {
+            position: relative;
+            aspect-ratio: 256/450;
+
+            img {
+                width: 100%;
+                object-fit: cover;
+
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
+
+            h3 {
+                position: absolute;
+                top: 80%;
+                left: 10%;
+                font-family: "Josefin Sans", sans-serif;
+                color: $white;
+                font-size: 2em;
+            }
+        }
+    }
+}
