@@ -34,17 +34,34 @@ header {
             font-family: "Alata", sans-serif;
             cursor: pointer;
         }
+    
         li {
             a {
+                position: relative; // Asegúrate de que el contenedor tenga position: relative
                 text-decoration: none;
                 color: $white;
-
-                &:hover {
-                    color: $black;
+    
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 50%; // Ajusta la longitud del subrayado
+                    height: 2px; // Ajusta el grosor del subrayado
+                    background-color: currentColor; // Utiliza el color actual del texto
+                    bottom: -4px; // Ajusta esta propiedad para mover la línea más abajo
+                    left: 50%;
+                    transform: translateX(-50%);
+                    border-radius: 2px; // Ajusta el borde redondeado
+                    opacity: 0;
+                    transition: opacity 0.3s;
+                }
+    
+                &:hover::after {
+                    opacity: 1;
                 }
             }
         }
     }
+    
     
 
     .header-text {
